@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.body{
+    color: #FFFFFF;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../../assets/images/popcorn.jpeg') no-repeat center;
+    background-size: cover;
+}
+
+a, a:visited{
+    color:crimson;
+}
+
+a:hover{
+    color:lightgray;
+}
+
+.login-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.login-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+.login-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 80px 40px 40px;
+    background:rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+}
+
+.login-form::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background:rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    pointer-events: none;
+    transform: skewX(-30deg);
+}
+
+.login-form img{
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    width: 100px;
+    background: rgb(32, 32, 32);
+    border-radius: 50%;
+}
+
+.login-form h2{
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: crimson;
+}
+
+.login-form .input-group{
+    position: relative;
+}
+
+.login-form .input-group input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.login-form .input-group label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.login-form .input-group input:focus + label, .login-form .input-group input:valid + label{
+    transform: translateY(-18px);
+    color: crimson;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    padding-bottom: 20px;
+}
+

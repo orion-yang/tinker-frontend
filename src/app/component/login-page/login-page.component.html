@@ -1,2 +1,24 @@
-<p>login-page works! lancaldscnapeinva aidmvapidvpa</p>
+<div class="body">
+    <div class="login-container">
+        <form class="login-form" (ngSubmit)="login()">
+            <img src="../../../assets/images/popcorn-icon.png" alt="">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" name="loginUsername" id="loginUsername" [(ngModel)]="username" required autofocus>
+                <label for="loginUsername">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="loginPassword" id="loginPassword" [(ngModel)]="password" required>
+                <label for="loginPassword">Password</label>
+            </div>
+            <p class="error-message" *ngIf="showInvalidLogin" style="color:crimson">{{errorMessage}}</p>
+            <input [(ngModel)]="isRememberMe" [ngModelOptions]="{standalone: true}" type="checkbox" value="isRememberMe" id="rememberMe">
+            <label for="rememberMe">Remember Me</label>
+            <a><input type="submit" value="Login" class="login-btn" (onclick)="login()"></a>
+
+            <a class="forgot-pass"(click)="forgotPassword()" >Forgot Password?</a>
+            <p>Not a member yet? <a (click)="createAccount()"class="create-acct">Sign Up!</a></p>
+        </form>
+    </div>
+</div>
 
