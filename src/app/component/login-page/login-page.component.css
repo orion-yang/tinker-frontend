@@ -7,7 +7,7 @@
 
 .body{
     color: #FFFFFF;
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../../assets/images/popcorn.jpeg') no-repeat center;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../../assets/images/lady.png') no-repeat center;
     background-size: cover;
 }
 
@@ -50,7 +50,7 @@ a:hover{
     width: 100%;
     max-width: 400px;
     padding: 80px 40px 40px;
-    background:rgba(0, 0, 0, 0.8);
+    background:rgba(173, 172, 172, 0.8);
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.8);
 }
