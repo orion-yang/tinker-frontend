@@ -56,8 +56,9 @@ export class LoginPageComponent implements OnInit {
       (response: User) => {
         if(response.isVerified === "true") {
           if (response.status === "Active") {
-            this.showInvalidLogin = false;
-            this.setLocalStorage(response.userName, response.id);
+            this.showInvalidLogin = false;     
+            this.setSessionStorage(response.userName, response.id);
+            this.createCookie(response.userName, response.id, 10);
             this.user = response;
             this.router.navigate(['']);
           } else {
@@ -96,7 +97,8 @@ export class LoginPageComponent implements OnInit {
         }
         this.showInvalidLogin = false;
         this.admin = response;
-        this.setLocalStorage(response.userName, response.id);
+        this.setSessionStorage(response.userName, response.id);
+        this.createCookie(response.userName, response.id, 10);
         this.router.navigate(['/admin/profile']);
       },
       (error : HttpErrorResponse) => {
@@ -105,10 +107,22 @@ export class LoginPageComponent implements OnInit {
     )
   }
 
-  setLocalStorage(userName: string, id: string) {
-    localStorage.setItem('userName', userName);
-    localStorage.setItem('id', id);
+  setSessionStorage(userName: string, id: string) {
+    sessionStorage.setItem('userName', userName);
+    sessionStorage.setItem('id', id);
   }
+
+  createCookie(userName: string,value: string, minutes: number) {
+    if (minutes) {
+        var date = new Date();
+        date.setMinutes(date.getMinutes() + minutes);
+        var expires = "; expires=" + date.toUTCString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = userName + "=" + value + expires + ";";
+}
+
 
   forgotPassword() {
     this.router.navigate(['/forgot-password']);
