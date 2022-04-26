@@ -129,6 +129,15 @@
     opacity: .9;
 }
 
+.heart {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: 19%;
+    left: 32.4%;
+}
 
 .info {
     padding-top: 20px;
@@ -138,6 +147,13 @@
 .project-creator {
     float: left;
     margin-left: 20px;
+}
+
+.likes {
+    text-align: center;
+    position: absolute;
+    top: 23%;
+    left: 32.4%;
 }
 
 .date-created {
