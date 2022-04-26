@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ProjectsPageComponent } from './component/projects-page/projects-page.component';
+import { ProjectsComponent } from './component/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProjectsPageComponent } from './component/projects-page/projects-page.c
     HomePageComponent,
     LoginPageComponent,
     ForgotPasswordComponent,
-    ProjectsPageComponent
+    ProjectsPageComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
