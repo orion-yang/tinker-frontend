@@ -61,6 +61,8 @@
     text-align: center;
     height: 90%;
     border: 1px solid blue;
+    background-color: rgb(187, 187, 187);
+    color: crimson;
 }
 
 .right-arrow {
@@ -69,3 +71,37 @@
     height: 30%;
     border: 1px solid red;
 }
+
+.project-name {
+    font-size: 30px;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 1px solid crimson;
+}
+
+.project-description {
+    margin: 15px 15px 10px 10px;
+}
+
+.project-buttons {
+    display: flex;
+}
+
+.button {
+    margin-top: 22%;
+    flex: 1;
+}
+
+.dislike-button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.like-button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+
+
