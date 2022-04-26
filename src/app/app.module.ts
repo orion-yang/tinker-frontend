@@ -8,7 +8,6 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
-import { ProjectsPageComponent } from './component/projects-page/projects-page.component';
 import { ProjectsComponent } from './component/projects/projects.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ProjectsComponent } from './component/projects/projects.component';
     HomePageComponent,
     LoginPageComponent,
     ForgotPasswordComponent,
-    ProjectsPageComponent,
     ProjectsComponent
   ],
   imports: [
