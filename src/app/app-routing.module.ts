@@ -7,14 +7,15 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent},
-  { path: 'login', component: LoginPageComponent},
-  { path: 'forgot-password', component: ForgotPasswordComponent}
+  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
 ];
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes), FormsModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

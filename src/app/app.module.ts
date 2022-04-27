@@ -8,13 +8,17 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
