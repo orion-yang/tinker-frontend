@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ProjectsComponent } from './component/projects/projects.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
   { path: 'login', component: LoginPageComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: 'projects', component: ProjectsComponent}
+  { path: 'projects', component: ProjectsComponent},
+  { path: 'profile', component: ProfileComponent},
 
 ];
 
