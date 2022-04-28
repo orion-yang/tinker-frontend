@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ProjectsComponent } from './component/projects/projects.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { CreateAccountComponent } from './component/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './component/profile/profile.component';
     LoginPageComponent,
     ForgotPasswordComponent,
     ProjectsComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
