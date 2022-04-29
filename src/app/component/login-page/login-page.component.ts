@@ -129,7 +129,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   createAccount() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/create-account']);
   }
 
 }

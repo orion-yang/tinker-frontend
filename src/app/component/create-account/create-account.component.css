@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #fff;
+}
+
+.body{
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/images/world-gear.png'), url('../../../assets/images/gears.webp');
+    background-position: bottom left, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 15%, cover;
+}
+
+#title{
+    text-align: center;
+}
+
+.registration-form{
+    margin: auto;
+    width: 100%;
+}
+
+fieldset, .address-layout{
+    clear:both;
+    width:auto;
+    margin:auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.register-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration{
+    position: relative;
+    width: auto;
+    margin: auto;
+    max-width: 500px;
+    padding: 40px 40px 60px;
+    background:rgba(116, 116, 116, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+
+
+th, td{
+    text-align: left;
+    width:30%;
+    padding: 10px;
+}
+
+form .input-group{
+    position: relative;
+}
+
+form .input-group input{
+    width: 60%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+form .input-group label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+form .input-group input:focus + label, form .input-group input:valid + label{
+    transform: translateY(-18px);
+    color: crimson;
+    font-size: 0.9rem;
+}
+
+.create-btn{
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.create-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+fieldset, .address-layout{
+    clear:both;
+    width:auto;
+    margin:auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: crimson;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px crimson;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+option {
+    color: black;
+}
+
+select {
+    color: black;
+}
+
+.expiration input{
+    width: 20%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+.verification-container {
+    margin:auto;
+    width: 40%;
+    padding-top: 100px;
+}
+
+a, a:visited{
+    color:crimson;
+}
+
+a:hover{
+    color:lightgray;
+}
+
+.verify-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.verify-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+.verification-form{
+    margin-left: 70px;
+    width: 100%;
+    max-width: 400px;
+    padding: 80px 40px 40px;
+    background:rgba(116, 116, 116, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+}
+
+.verification-form h2{
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.verification-form .input-group{
+    position: relative;
+}
+
+.verification-form .input-group input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.input-group label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.input-group input:focus + label, .input-group input:valid + label{
+    transform: translateY(-18px);
+    color: crimson;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.message{
+    color: rgb(255, 109, 109);
+    padding-top: 20px;
+    font-size: 15px;
+}

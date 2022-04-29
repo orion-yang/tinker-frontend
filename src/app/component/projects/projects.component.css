@@ -7,7 +7,7 @@
 
 .body {
     color: #FFFFFF;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../../assets/images/gears.webp') no-repeat center;
+    background: url('../../../assets/images/gears.webp') no-repeat center;
     background-size: cover;
 }
 

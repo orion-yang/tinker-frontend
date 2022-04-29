@@ -1,1 +1,46 @@
-<p>create-account works!</p>
+<div class="body">
+    <div *ngIf="showMainForm" class="register-container">
+        <form class="registration" (ngSubmit)="onAddUser()">
+            <h1 id="title">Create a New Account</h1><br>
+            <h3 id="subtitle">Please fill out the form below to create your account.</h3><br>
+            <div class="registration-form">
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="userName" name="username" id="username" required autofocus>
+                    <label for="username">Username*</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="firstName" name="first-name" id="first-name" required>
+                    <label for="first-name">First Name*</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="lastName" name="last-name" id="last-name" required>
+                    <label for="last-name">Last Name*</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="email" name="email" id="email" required>
+                    <label for="email">Email*</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" [(ngModel)]="password" name="password" id="password" required>
+                    <label for="password">Password*</label>
+                </div>
+                <br>
+                <input type="checkbox" [(ngModel)]="termsAgreed" name="termsandcons" class="check">
+                <label for="termsandcons" required class="check-label"> I agree to the Terms & Conditions and Privacy Policies.</label><br>
+                <h5 class="message">{{message}} </h5>
+                <input type="submit" class="create-btn"  value="Create Account">
+            </div>
+        </form>
+    </div> 
+    <div class="verification-container" *ngIf="emailSent && !validCode">
+        <form class="verification-form" (ngSubmit)="verifyConfirmationCode()">
+            <h2>Enter the verification code sent to your email</h2>
+            <p class="error-message" *ngIf="enteredWrongCode">INVALID VERIFICATION CODE</p>
+            <div class="input-group">
+                <input type="text" name="verificationCode" [(ngModel)]="typedVerificationCode" required autofocus>
+                <label for="verificationCode">Verification Code</label>
+            </div>
+            <a><input type="submit" value="Verify" class="verify-btn" ></a>
+        </form>
+    </div>       
+</div>
