@@ -1,20 +1,20 @@
 <div class="body">
     <div class="container">
         <div class="sidebar">
-            <img src="assets/images/popcorn-icon.png" alt="">
+            <img src="../../../assets/images/profile.png" alt="">
             <h4>Welcome, {{user.firstName}}!</h4>
             <ul>
                 <li id="active"><a><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
-                <li><a routerLink="/user/payment-method"><fa-icon [icon]="cardIcon"></fa-icon> My Projects</a></li>
-                <li><a routerLink="/user/order-history"><fa-icon [icon]="historyIcon"></fa-icon> Liked Projects</a></li>
-                <li><a (click)="goHome()"><fa-icon [icon]="homeIcon"></fa-icon> Home</a></li>
+                <li><a routerLink="/user-projects"><fa-icon [icon]="cardIcon"></fa-icon> My Projects</a></li>
+                <li><a routerLink="/liked-projects"><fa-icon [icon]="historyIcon"></fa-icon> Liked Projects</a></li>
+                <li><a (click)="exit()"><fa-icon [icon]="homeIcon"></fa-icon> Exit</a></li>
             </ul>
         </div>
         <div class="main-container">
             <div class="header"><h1>{{user.firstName}}'s Profile</h1><br></div>
             <div class="profile">
-                <button class="update-btn" id="edit-btn" *ngIf= "!editMode && !isVerified" (click)="edit()">Edit</button>
-                <button class="update-btn" id="edit-btn" *ngIf= "editMode" (click)="cancel()">Cancel</button>
+                <button class="edit-btn" id="edit-btn" *ngIf= "!editMode && !isVerified" (click)="edit()">Edit</button>
+                <button class="edit-btn" id="edit-btn" *ngIf= "editMode" (click)="cancel()">Cancel</button>
                 <label for="username">Username:</label>
                 {{user.userName}}<br><br>
                 <label for="name">Name:</label>
@@ -33,9 +33,7 @@
                 </form><br><br>
                 <label class="errorMessage"> {{ confirmPasswordMessage }}</label>
             </div>
-
             <div class="update" *ngIf="isVerified && editMode">
-                <h1>Update My Profile</h1>
                 <div class="change">
                     <form action="#" class="username-form">
                         <div class="input-group">

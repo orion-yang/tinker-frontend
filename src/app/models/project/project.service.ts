@@ -29,6 +29,7 @@ export class ProjectService {
   }
 
   public updateProject(project: Project):Observable<Project> {
+    console.log(project);
     return this.http.put<Project>(`${this.projectServiceUrl}/update`, project);
   }
 

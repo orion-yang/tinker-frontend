@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="container">
+        <div class="sidebar">
+            <img src="../../../assets/images/profile.png" alt="">
+            <h4>Welcome, {{user.firstName}}!</h4>
+            <ul>
+                <li><a routerLink="/profile"><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
+                <li><a routerLink="/user-projects"><fa-icon [icon]="fileIcon"></fa-icon> My Projects</a></li>
+                <li id="active"><a routerLink="/liked-projects"><fa-icon [icon]="heartIcon"></fa-icon> Liked Projects</a></li>
+                <li><a (click)="exit()"><fa-icon [icon]="exitIcon"></fa-icon> Exit</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <h1>{{user.firstName}}'s Liked Projects</h1><br>
+            <div class="order-list" *ngIf="likedProjects.length !== 0">
+                <div class="ng-container" *ngFor="let liked of likedProjects">
+                    <div class="order-item">
+                        <p class="title">{{liked.project.project_name}}</p> 
+                        <span class="right-side">Created By: {{liked.project.user.firstName}} {{liked.project.user.lastName}}<button class="view-btn" (click) = viewInfo(liked)>View</button></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="empty-order-list" *ngIf="likedProjects.length === 0">You do not have any liked projects.</div> 
+            <div class="info-container" *ngIf="this.selectedLikedProject">
+                <div class="project-display">
+                    <label>Created By: </label>
+                    {{selectedLikedProject.project.user.firstName}} {{selectedLikedProject.project.user.lastName}}<br><br>
+                    <label>Project Name: </label>
+                    {{selectedLikedProject.project.project_name}}<br><br>
+                    <label>Date Created: </label>
+                    {{selectedLikedProject.project.create_date}}<br><br>
+                    <label>Likes:</label>
+                    {{selectedLikedProject.project.like_counter}}<br><br>
+                    <label>Description: </label><br><br>
+                    {{selectedLikedProject.project.description}}<br><br>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

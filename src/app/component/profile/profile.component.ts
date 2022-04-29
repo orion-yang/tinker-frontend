@@ -59,7 +59,6 @@ export class ProfileComponent implements OnInit {
 
 
   findUser() {
-    console.log("here in user");
     if(this.username) {
       this.userService.findByUserName(this.username).subscribe(
         (response : User) => {
@@ -212,8 +211,8 @@ export class ProfileComponent implements OnInit {
     this.newPassword = "";
   }
 
-  goHome() {
-    this.router.navigate(['']);
+  exit() {
+    this.router.navigate(['/projects']);
   }
 
 }

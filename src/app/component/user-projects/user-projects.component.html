@@ -1,0 +1,47 @@
+<div class="body">
+    <div class="container">
+        <div class="sidebar">
+            <img src="../../../assets/images/profile.png" alt="">
+            <h4>Welcome, {{user.firstName}}!</h4>
+            <ul>
+                <li><a routerLink="/profile"><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
+                <li id="active"><fa-icon [icon]="fileIcon"></fa-icon> My Projects</li>
+                <li><a routerLink="/liked-projects"><fa-icon [icon]="heartIcon"></fa-icon> Liked Projects</a></li>
+                <li><a (click)="exit()"><fa-icon [icon]="exitIcon"></fa-icon> Exit</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="header"><h1>{{user.firstName}}'s Project Information</h1><br></div>
+            <div class="newProject">
+                <h1>Add New Project Information</h1>
+                <div class="add">
+                    <div class="input-group">
+                        <input type="text" [(ngModel)]="project_name" class="textfield" required>
+                        <label>Project Name</label>
+                    </div>
+                    <label>Project Description:</label><br><br>
+                    <div class="input-group">
+                        <textarea [(ngModel)]="description" class="textarea" rows="7" cols="55" maxlength="500" required></textarea> 
+                    </div>
+                    <p class="message">{{message}}</p>
+                    <input type="submit" value="Add" class="add-btn" (click)="addProject()">
+                </div>
+            </div>
+            <div class="project" id="single-card" *ngFor="let project of projects">
+                <label for="nameOnCard">Project Name:</label>
+                {{project.project_name}}<br><br>
+                <label for="cardNum">Date Created:</label>
+                {{project.create_date}}<br><br>
+                <label for="cardType">Likes:</label>
+                {{project.like_counter}}<br><br>
+                <label for="expDate">Description:</label><br><br>
+                {{project.description}}<br><br>
+                <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
+            </div>  
+            <div class="project" id="empty" *ngIf="projects.length === 0">
+                No Projects Available
+            </div>  
+            
+        </div>
+    </div>
+</div>

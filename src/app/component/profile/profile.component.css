@@ -18,9 +18,10 @@
 
 h1 {
     color: crimson;
-    font-size: 35px;
-    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
-    margin-left: 250px;
+    font-size: 45px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.9);
+    margin-left: 25px;
+    outline: 1;
 }
 
 .switch {
@@ -61,13 +62,19 @@ input:checked + .slider:before {
     margin-bottom: 20px;
 }
 .profile{
-    height: 27vh !important;
+    height: 25vh !important;
     font-size: 18px;
+    width: 50%;
+    margin: 10px 20px 20px;
+    padding: 5px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
 }
 
-.profile, .change, .payment, .confirmPass{
+.change, .payment, .confirmPass{
     position: relative;
-    width: 70%;
+    width: 50%;
     margin: 10px 20px 20px;
     padding: 20px 40px 40px;
     background:rgb(116, 116, 116, 0.9);
@@ -76,7 +83,7 @@ input:checked + .slider:before {
 }
 
 .change, .confirmPass{
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     border: 0.5px solid gray;
 }
 
@@ -102,6 +109,7 @@ form .input-group{
     text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
     font-weight: bold;
     float: left;
+    padding: 0px 15px 15px 15px;
 }
 
 form .input-group input{
@@ -142,6 +150,21 @@ form .input-group input:focus + label, form .input-group input:valid + label{
     outline: none;
     display: block;
     margin-top: 10px;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 15px;
     margin-left: auto;
     text-transform: uppercase;
     letter-spacing: 1px;

@@ -12,6 +12,9 @@ import { ProjectsComponent } from './component/projects/projects.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { CreateAccountComponent } from './component/create-account/create-account.component';
 import { AboutPageComponent } from './component/about-page/about-page.component';
+import { LikedProjectsComponent } from './component/liked-projects/liked-projects.component';
+import { UserProjectsComponent } from './component/user-projects/user-projects.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { AboutPageComponent } from './component/about-page/about-page.component'
     ProjectsComponent,
     ProfileComponent,
     CreateAccountComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    LikedProjectsComponent,
+    UserProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { AboutPageComponent } from './component/about-page/about-page.component'
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

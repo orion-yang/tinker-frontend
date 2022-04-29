@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.body {
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/images/user-profile-bg.png'), url('../../../assets/images/world-gear.png');
+    background-position: left bottom, top right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45%, 50%;
+}
+
+.project{
+    color: white;
+    position: relative;
+    width: 43%;
+    height: 500px;
+    max-height: fit-content;
+    margin: 10px 20px 20px;
+    padding: 50px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    word-wrap: break-word;
+}
+
+#empty{
+    text-align: center;
+    color: white;
+}
+
+.delete-btn {
+    position: absolute;
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    left: 70%;
+    top: 85%;
+    float: right;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.delete-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+.header, h3{
+    padding: 20px;
+}
+
+.add{
+    position: relative;
+    min-width:fit-content;
+    margin: 10px 20px 20px;
+    padding: 50px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+
+.add{
+    margin-bottom: 70px;
+    border: 0.5px solid gray;
+    width: 45%;
+}
+
+h1 {
+    color: crimson;
+    font-size: 35px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+
+ .input-group{
+    position: relative;
+}
+
+ .input-group input{
+    width: 90%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+ .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+label {
+    color: white;
+}
+
+ .input-group input:focus + label,  .input-group input:valid + label {
+    transform: translateY(-18px);
+    color: crimson;
+    font-size: 0.9rem;
+}
+
+.add-btn{
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+#single-card{
+    float: left;
+}
+
+.newProject {
+    clear: both;
+}
+
+.message{
+    color: crimson;
+}
+
+.textarea {
+    color: white;
+    resize: none;
+    background:none;
+    border: white solid .5px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    padding: 0px 2.5px 0px 2.5px;
+}
