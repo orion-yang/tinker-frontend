@@ -1,7 +1,12 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Liked } from 'src/app/models/liked/liked';
+import { LikedService } from 'src/app/models/liked/liked.service';
 import { Project } from 'src/app/models/project/project';
 import { ProjectService } from 'src/app/models/project/project.service';
 import { User } from 'src/app/models/user/user';
+import { UserService } from 'src/app/models/user/user.service';
 
 @Component({
   selector: 'app-projects',
@@ -13,31 +18,51 @@ export class ProjectsComponent implements OnInit {
   create_date: string;
   like_counter: number;
   description: string;
+  username;
   userId;
 
-  likedProjects!: Project[];
+  unlikedProject!: Liked;
+  user!: User;
+  liked!: Liked;
+  likedProjects!: Liked[];
   projects!: Project[];
   currentProject!: Project;
   userLiked: boolean = false;
   count: number = 0;
 
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService,
+              private likedService: LikedService,
+              private userService: UserService,
+              private router: Router) {
     this.project_name = 'Title';
     this.create_date = "00/00/00";
     this.like_counter = 0;
     this.description = "NONE"
     this.userId = sessionStorage.getItem('id') ? sessionStorage.getItem('id') : "";
-
+    this.username = sessionStorage.getItem('userName') ? sessionStorage.getItem('userName') : "";
    }
 
   ngOnInit(): void {
     this.initializeCurrentProject();
-    console.log(this.currentProject);
     this.getAllProjects();
+    this.findUser()
+    this.getLikedProjects();
   }
 
-  //For Testing purposes
+  findUser() {
+    if(this.username) {
+      this.userService.findByUserName(this.username).subscribe(
+        (response : User) => {
+          this.user = response;
+        },
+        (error : HttpErrorResponse) => {
+          console.log(error);
+        }
+      )
+    }
+  }
+
   initializeCurrentProject() {
     var tempUser : User  = {
       id: "",
@@ -95,24 +120,103 @@ export class ProjectsComponent implements OnInit {
     this.currentProject = this.projects[this.count];
   }
 
+  getLikedProjects() {
+    if (this.userId) {
+      this.likedService.findAllByUserId(this.userId).subscribe(
+        (response: Liked[]) => {
+          this.likedProjects = response;
+        }
+      )      
+    }
+  }
+
+  unlikeProject() {
+    this.userLiked = false;
+
+    if (this.likedProjects) {
+      for (let i = 0; i < this.likedProjects.length; i++) {
+        if (this.currentProject.id == this.likedProjects[i].project.id) {
+          this.likedService.deleteLiked(this.likedProjects[i].id).subscribe(
+            (response : void) => {
+              this.getLikedProjects();
+            }
+          )
+          this.userLiked = true;
+          break;
+        }
+      }      
+    }
+
+    if (this.userLiked) {
+      this.currentProject.like_counter = this.currentProject.like_counter - 1;
+      this.projectService.updateProject(this.currentProject).subscribe(
+        (response : Project) => {
+          this.getAllProjects();
+        }
+      )
+      this.userLiked = false;
+    }
+    this.nextProject();
+  }
+
   likeProject() {
-    //might have to checked liked table
-    //imp: if not in likedProjects then continue
+
+    if (this.likedProjects) {
+      for (let i = 0; i < this.likedProjects.length; i++) {
+        if (this.currentProject.id == this.likedProjects[i].project.id) {
+          this.userLiked = true;
+          break;
+        }
+      }      
+    }
+
     if (!this.userLiked) {
       this.currentProject.like_counter = this.currentProject.like_counter + 1;
-      this.projectService.updateProject(this.currentProject);
+      this.projectService.updateProject(this.currentProject).subscribe(
+        (response : Project) => {
+          this.getAllProjects();
+        }
+      )
+
+      if (this.user && this.currentProject) {
+        var newLiked : Liked = {
+          id: '',
+          user: this.user,
+          project: this.currentProject
+        }
+
+
+        this.likedService.addLiked(newLiked).subscribe(
+          (response: Liked) => {
+            this.liked = response;
+            this.getLikedProjects();
+          }
+        )      
+      }        
+
       this.userLiked = true;
     }
-    
-    //also implement add liked class/database
   }
 
   goToProfile() {
-
+    this.router.navigate(['/profile']);
   }
 
   signOut() {
-
+    this.router.navigate(['']);
+    sessionStorage.clear();
+    this.deleteAllCookies()
   }
+
+  deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
 
 }

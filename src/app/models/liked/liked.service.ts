@@ -17,11 +17,11 @@ export class LikedService {
   }
 
   public findAllByUserId(userId:any): Observable<Liked[]> {
-    return this.http.get<Liked[]>(`${this.likedServiceUrl}/find/${userId}`);
+    return this.http.get<Liked[]>(`${this.likedServiceUrl}/find/user/${userId}`);
   }
 
   public findAllByProjectId(projectId:any): Observable<Liked[]> {
-    return this.http.get<Liked[]>(`${this.likedServiceUrl}/find/${projectId}`);
+    return this.http.get<Liked[]>(`${this.likedServiceUrl}/find/project/${projectId}`);
   }
 
   public addLiked(liked: Liked): Observable<Liked> {
@@ -30,6 +30,11 @@ export class LikedService {
 
   public deleteLiked(id:string):Observable<void>{
     return this.http.delete<void>(`${this.likedServiceUrl}/delete/${id}`);
+  }
+
+  public deleteLikedByProject(project_id:string):Observable<void>{
+    console.log(project_id);
+    return this.http.delete<void>(`${this.likedServiceUrl}/delete-by-project/${project_id}`);
   }
 
 }

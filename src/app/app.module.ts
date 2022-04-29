@@ -11,6 +11,9 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
 import { ProjectsComponent } from './component/projects/projects.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { CreateAccountComponent } from './component/create-account/create-account.component';
+import { LikedProjectsComponent } from './component/liked-projects/liked-projects.component';
+import { UserProjectsComponent } from './component/user-projects/user-projects.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { CreateAccountComponent } from './component/create-account/create-accoun
     ForgotPasswordComponent,
     ProjectsComponent,
     ProfileComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    LikedProjectsComponent,
+    UserProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { CreateAccountComponent } from './component/create-account/create-accoun
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
