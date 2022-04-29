@@ -1,0 +1,42 @@
+<div class="body">
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <img src="../../../assets/images/profile.png" alt="">
+            <h4>Welcome, {{admin.firstName}}!</h4>
+            <ul>
+                <li><a routerLink="/admin/profile"><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
+                <li><a routerLink="/admin/manage-projects"><fa-icon [icon]="fileIcon"></fa-icon> Manage Projects</a></li>
+                <li id="active"><a routerLink="/admin/manage-users"><fa-icon [icon]="usersIcon"></fa-icon> Manage Users</a></li>
+                <li><a (click)="signOut()"><fa-icon [icon]="signoutIcon"></fa-icon> Sign Out</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <h1>Manage Users</h1><br>
+            <div class="user-list" *ngIf="users.length !== 0">
+                <div class="ng-container" *ngFor="let user of users">
+                    <div class="user-item">
+                        <p class="title">Username: {{user.userName}}</p> 
+                        <span class="right-side">Email: {{user.email}}<button class="view-btn" (click) = viewInfo(user)>View</button></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="empty-user-list" *ngIf="users.length === 0">You do not have any liked projects.</div> 
+            <div class="info-container" *ngIf="this.selectedUser">
+                <div class="project-display">
+                    <label>User: </label>
+                    {{selectedUser.firstName}} {{selectedUser.lastName}}<br><br>
+                    <label>Email: </label>
+                    {{selectedUser.email}}<br><br>
+                    <label>Status: </label>
+                    {{selectedUser.status}}<br><br>
+                    <label>Number of Projects:</label>
+                    {{selectedUser.numberOfProjects}}<br><br>
+                    <button *ngIf="selectedUser.status === 'Active'" type="button" class="suspend-btn" (click)="suspend()">Suspend</button>
+                    <button *ngIf="selectedUser.status === 'Inactive'" type="button" class="suspend-btn" (click)="unSuspend()">Unsuspend</button>                    
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.body {
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/images/user-profile-bg.png'), url('../../../assets/images/admin-bg.png');
+    background-position: left bottom, top right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45%, 50%;
+}
+
+
+h1 {
+    color: crimson;
+}
+
+label{
+    float: left;
+    padding-right: 5px;
+}
+
+.ng-container {
+    margin-top: -18px;
+}
+
+.info-container{
+    float: left;
+    position: relative;
+    height: auto;
+    width: 400px;
+    padding: 50px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.title{
+    margin-top: 20px;
+}
+
+.user-list{
+    float: left;
+    position: relative;
+    min-width:fit-content;
+    margin-right: 15px;
+    padding: 40px 17px 20px 20px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    width: 60%;
+    background:rgb(116, 116, 116, 0.9);
+    /* height: auto; */
+    height: 385px;
+    width: 350px;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.empty-user-list{
+    padding-top: 15px;
+    padding-left: 15px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    background:rgb(116, 116, 116, 0.9);
+    height: 50px;
+    width: 350px;
+}
+
+.user-item{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    height: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.right-side {
+    margin-bottom: 10px;
+}
+
+.view-btn {
+    float: right;
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-top: -10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.empty {
+    font-size: 20px;
+}
+
+.view-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+.suspend-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.suspend-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:rgb(116, 116, 116);
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(155, 10, 39); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(185, 19, 52, 0.753);  
+  }

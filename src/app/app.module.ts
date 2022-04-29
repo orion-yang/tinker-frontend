@@ -15,6 +15,10 @@ import { AboutPageComponent } from './component/about-page/about-page.component'
 import { LikedProjectsComponent } from './component/liked-projects/liked-projects.component';
 import { UserProjectsComponent } from './component/user-projects/user-projects.component';
 import { DatePipe } from '@angular/common';
+import { AdminProfileComponent } from './component/admin-profile/admin-profile.component';
+import { ManageUsersComponent } from './component/manage-users/manage-users.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { ManageProjectsComponent } from './component/manage-projects/manage-projects.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { DatePipe } from '@angular/common';
     CreateAccountComponent,
     AboutPageComponent,
     LikedProjectsComponent,
-    UserProjectsComponent
+    UserProjectsComponent,
+    AdminProfileComponent,
+    ManageUsersComponent,
+    ManageProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,7 @@ import { DatePipe } from '@angular/common';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    AgGridModule.withComponents([])
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

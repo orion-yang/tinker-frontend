@@ -11,6 +11,9 @@ import { CreateAccountComponent } from './component/create-account/create-accoun
 import { ProjectsComponent } from './component/projects/projects.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { AboutPageComponent } from './component/about-page/about-page.component';
+import { AdminProfileComponent } from './component/admin-profile/admin-profile.component';
+import { ManageUsersComponent } from './component/manage-users/manage-users.component';
+import { ManageProjectsComponent } from './component/manage-projects/manage-projects.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -22,6 +25,9 @@ const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'user-projects', component: UserProjectsComponent},
   { path: 'liked-projects', component: LikedProjectsComponent},
+  { path: 'admin/profile', component: AdminProfileComponent},
+  { path: 'admin/manage-users', component: ManageUsersComponent},
+  { path: 'admin/manage-projects', component: ManageProjectsComponent},
 
 ];
 

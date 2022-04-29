@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.body {
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/images/user-profile-bg.png'), url('../../../assets/images/admin-bg.png');
+    background-position: left bottom, top right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45%, 50%;
+}
+
+.header, h3{
+    padding: 20px;
+}
+
+h1 {
+    color: crimson;
+    font-size: 45px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.9);
+    margin-left: 25px;
+    outline: 1;
+}
+
+.switch {
+    position: relative;
+    /* display: inline-block; */
+    width: 60px;
+    height: 34px;
+    float: right;
+    margin-left: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input:checked + .slider {
+    background-color: crimson;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px crimson;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#password, #username, #new-pass{
+    width: 50%;
+}
+
+#newfname, #newlname, #username{
+    width: 80%;
+    margin-bottom: 20px;
+}
+.profile{
+    height: 25vh !important;
+    font-size: 18px;
+    width: 50%;
+    margin: 10px 20px 20px;
+    padding: 5px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+
+.change, .payment, .confirmPass{
+    position: relative;
+    width: 50%;
+    margin: 10px 20px 20px;
+    padding: 20px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+
+.change, .confirmPass{
+    margin-bottom: 30px;
+    border: 0.5px solid gray;
+}
+
+form .input-group{
+    position: relative;
+    float: left;
+    margin-right:20px;
+    width: 60%;
+}
+
+.errorMessage {
+    clear: both;
+    color: crimson;
+    font-size: 17px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
+    font-weight: bold;
+}
+
+.errorMessage2 {
+    clear: both;
+    color: crimson;
+    font-size: 17px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
+    font-weight: bold;
+    float: left;
+    padding: 0px 15px 15px 15px;
+}
+
+form .input-group input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+form .input-group label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+form .input-group input:focus + label, form .input-group input:valid + label{
+    transform: translateY(-18px);
+    color: crimson;
+    font-size: 1rem;
+}
+
+.update-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.update-btn:hover{
+    background-color:rgb(228, 54, 54);
+}

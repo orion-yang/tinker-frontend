@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.body {
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../assets/images/user-profile-bg.png'), url('../../../assets/images/admin-bg.png');
+    background-position: left bottom, top right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45%, 50%;
+}
+
+.project{
+    color: white;
+    position: relative;
+    width: 43%;
+    height: 500px;
+    max-height: fit-content;
+    margin: 10px 20px 20px;
+    padding: 50px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    word-wrap: break-word;
+}
+
+#empty{
+    text-align: center;
+    color: white;
+}
+
+.delete-btn {
+    position: absolute;
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    left: 70%;
+    top: 85%;
+    float: right;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.delete-btn:hover{
+    background-color:rgb(228, 54, 54);
+}
+
+.header, h3{
+    padding: 20px;
+}
+
+h1 {
+    color: crimson;
+    font-size: 35px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+
+ .input-group{
+    position: relative;
+}
+
+label {
+    color: white;
+}
+
+#single-card{
+    float: left;
+}
+
+.message{
+    color: crimson;
+}

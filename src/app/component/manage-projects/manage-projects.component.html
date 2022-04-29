@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <img src="../../../assets/images/profile.png" alt="">
+            <h4>Welcome, {{admin.firstName}}!</h4>
+            <ul>
+                <li><a routerLink="/admin/profile"><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
+                <li id="active"><fa-icon [icon]="fileIcon"></fa-icon> Manage Projects</li>
+                <li><a routerLink="/admin/manage-users"><fa-icon [icon]="usersIcon"></fa-icon> Manage Users</a></li>
+                <li><a (click)="signOut()"><fa-icon [icon]="signoutIcon"></fa-icon> Sign Out</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="header"><h1>All Project Information</h1><br></div>
+            <div class="project" id="single-card" *ngFor="let project of projects">
+                <label for="nameOnCard">Project Name:</label>
+                {{project.project_name}}<br><br>
+                <label for="cardNum">Date Created:</label>
+                {{project.create_date}}<br><br>
+                <label for="cardType">Likes:</label>
+                {{project.like_counter}}<br><br>
+                <label for="expDate">Description:</label><br><br>
+                {{project.description}}<br><br>
+                <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
+            </div>  
+            <div class="project" id="empty" *ngIf="projects.length === 0">
+                No Projects Available
+            </div>  
+            
+        </div>
+    </div>
+</div>
