@@ -1,0 +1,77 @@
+<div class="body">
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/images/popcorn-icon.png" alt="">
+            <h4>Welcome, {{user.firstName}}!</h4>
+            <ul>
+                <li id="active"><a><fa-icon [icon]="profileIcon"></fa-icon> Profile</a></li>
+                <li><a routerLink="/user/payment-method"><fa-icon [icon]="cardIcon"></fa-icon> My Projects</a></li>
+                <li><a routerLink="/user/order-history"><fa-icon [icon]="historyIcon"></fa-icon> Liked Projects</a></li>
+                <li><a (click)="goHome()"><fa-icon [icon]="homeIcon"></fa-icon> Home</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="header"><h1>{{user.firstName}}'s Profile</h1><br></div>
+            <div class="profile">
+                <button class="update-btn" id="edit-btn" *ngIf= "!editMode && !isVerified" (click)="edit()">Edit</button>
+                <button class="update-btn" id="edit-btn" *ngIf= "editMode" (click)="cancel()">Cancel</button>
+                <label for="username">Username:</label>
+                {{user.userName}}<br><br>
+                <label for="name">Name:</label>
+                {{user.firstName}} {{user.lastName}}<br><br>
+                <label for="email">Email:</label>
+                {{user.email}}<br><br>
+            </div>
+
+            <div class="confirmPass" *ngIf="editMode && !isVerified">
+                <form action="#" class="pass-form">
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" [(ngModel)]="confirmPassword" class="textfield"  autofocus required> 
+                        <label for="password">Confirm Password</label>
+                    </div>
+                    <input type="submit" value="Confirm" (click)="verifyPassword()" class="update-btn">
+                </form><br><br>
+                <label class="errorMessage"> {{ confirmPasswordMessage }}</label>
+            </div>
+
+            <div class="update" *ngIf="isVerified && editMode">
+                <h1>Update My Profile</h1>
+                <div class="change">
+                    <form action="#" class="username-form">
+                        <div class="input-group">
+                            <input type="text" name="new-username" id="username" [(ngModel)]="newUsername" required>
+                            <label for="new-username">New Username</label>
+                        </div>
+                        <input type="submit" value="Update" (click)="changeUsername()" class="update-btn">
+                    </form><br><br>
+                    <label class="errorMessage">{{ usernameMessage }}</label>
+                </div>
+                <div class="change">
+                    <form action="#" class="pass-form">
+                        <div class="input-group">
+                            <input type="text" name="new-firstname" id="newfname" [(ngModel)]="fname" required>
+                            <label for="new-name">New First Name</label>
+                        </div>
+                        <div class="input-group" >
+                            <input type="text" name="new-lastname" id="newlname" [(ngModel)]="lname" required>
+                            <label for="new-name">New Last Name</label>
+                        </div>
+                        <input type="submit" value="Update" (click)="changeName()" class="update-btn" >
+                         <label class="errorMessage2">{{ nameMessage }}</label>
+                    </form><br><br><br><br><br>
+                   
+                </div>
+                <div class="change">
+                    <form action="#" class="pass-form">
+                        <div class="input-group">
+                            <input type="password" name="new-pass" id="new-pass" [(ngModel)]="newPassword" required>
+                            <label for="new-pass">New Password</label>
+                        </div>
+                        <input type="submit" value="Update" (click)="changePassword()" class="update-btn">
+                    </form><br><br>
+                    <label class="errorMessage">{{ passwordMessage }}</label>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

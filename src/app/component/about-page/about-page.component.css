@@ -7,6 +7,71 @@
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
+body {
+    font-size: 100px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.column {
+    float: left;
+    width: 19%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: crimson;
+}
+
+/* NAVBAR STYLING START */
 .navbar {
     margin-right: 5%;
     margin-left: 5%;
@@ -16,6 +81,9 @@
     padding: 10px;
     background-color: white;
     color: #fff;
+}
+
+#navbar {
     border-bottom: 1px solid rgba(205, 205, 205, 0.3);
 }
 
@@ -25,41 +93,6 @@ a {
 
 li {
     list-style: none;
-}
-
-.topic {
-    color: crimson;
-    margin-left: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 50px;
-}
-
-.ladyPic {
-    border-radius: 30px;
-    width: 400px;
-    float: left;
-    margin-left: 30px;
-    margin-right: 50px;
-}
-
-.summary {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    margin-right: 50px;
-    color: rgb(40, 40, 40);
-}
-
-.projectIMGs {
-    margin-right: 100px;
-    margin-left: 100px;
-    display: center;
-}
-
-.body {
-    color: #FFFFFF;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    background-size: cover;
 }
 
 .login-btn {
@@ -148,13 +181,8 @@ input[type=checkbox] {
     }
 }
 
-.gradient {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    background-size: contain;
+/* NAVBAR STYLING END */
 
-}
-
-/* FOOTER STYLING */
 .footer {
     position: fixed;
     left: 0;

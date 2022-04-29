@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="navbar">
+        <div class="title">
+            Tinker
+        </div>
+        <img class="profile" (click)="goToProfile()"src="../../../assets/images/profile.png" alt="Profile">
+        <div class="signout" (click)="signOut()">
+            Sign Out
+        </div>
+    </div>
+
+    <div class="project-container">
+        <div class="left-arrow">
+            <img class="arrowl" (click)="previousProject()" src="../../../assets/images/left-arrow.jfif" alt="Left Arrow">
+        </div>
+        <div class="project-content">
+            <div class="project-name"> 
+                {{currentProject.project_name}} This is the Title
+            </div>
+            <div class="project-description"> 
+                <p class="description"> 
+                    {{currentProject.description}}Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis voluptate id magni officiis ratione aut accusamus voluptatem ipsum minus beatae dolorum, recusandae molestiae ab ex voluptatibus nihil eos reprehenderit quod?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quos accusantium, nobis explicabo velit hic sequi pariatur ipsa, ad minima distinctio accusamus, nesciunt iste iure voluptatibus ratione optio commodi ipsam!
+                </p>
+            </div>
+            <div class="project-buttons">
+                <div class="button" (click)="nextProject()"><img class="dislike-button" src="../../../assets/images/dislike.png" alt="Dislike"></div>
+                <div class="button" (click)="likeProject()"><img class="like-button" src="../../../assets/images/like.png" alt="Like"></div>
+            </div>
+            <div class="info"> 
+                <p class="project-creator">Orion Yang {{userId}}</p>
+                <img class="heart" src="../../../assets/images/heart.png" alt="Likes:">
+                <p class="likes">{{currentProject.like_counter}}</p>
+                <p class="date-created">Date Created: {{currentProject.create_date}}</p>
+            </div>
+        </div>
+        <div class="right-arrow">
+            <img class="arrowr" (click)="nextProject()" src="../../../assets/images/right-arrow.jpg" alt="Right Arrow">
+        </div>
+    </div>
+</div>

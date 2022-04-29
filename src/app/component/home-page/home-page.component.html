@@ -1,1 +1,75 @@
-<p>home-page works!</p>
+<!----NAVBAR GOES HERE------>
+<div class="navbar" id="navbar">
+  <div class="logo">
+    <a routerLink="/" routerLinkActive="active"
+      ><img src="../../../assets/images/logo.svg" alt="tinker logo"
+    /></a>
+  </div>
+  <!-- NAVIGATION MENU -->
+  <ul class="nav-links">
+    <!-- USING CHECKBOX HACK -->
+    <input id="checkbox_toggle" type="checkbox" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
+      <li><a routerLink="/about-page" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+      <li>
+        <a routerLink="create-account" routerLinkActive="active"
+          >Create Account</a
+        >
+      </li>
+      <li class="login-btn">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+    </div>
+  </ul>
+</div>
+<div class="content">
+  <div
+    style="
+      background-image: linear-gradient(to bottom, white, rgb(233, 150, 122));
+    "
+  >
+    <h1 class="topic">Tinker on projects with friends</h1>
+    <img
+      class="ladyPic"
+      src="../../../assets/images/lady.png"
+      alt="lady looking
+        at computer"
+    />
+    <h2 class="summary">
+      Research shows that collaboration fosters a productive learning
+      environment, simulates a real work environment, and encourages
+      problem-solving growth. Here at Tinker, you can find like-minded
+      individuals to pursue passion projects with, browse through inspiring
+      works in all fields, and give feedback on projects that catch your eye.
+      Try collaborating today!
+    </h2>
+    <br /><br /><br />
+    <h3 class="topic">Popular Projects</h3>
+    <div class="projects">
+      <img
+        class="projectIMGs"
+        src="../../../assets/images/proj1.svg"
+        alt="project 1"
+      />
+      <img
+        class="projectIMGs"
+        src="../../../assets/images/proj2.svg"
+        alt="project 2"
+      />
+      <img
+        class="projectIMGs"
+        src="../../../assets/images/proj3.svg"
+        alt="project 3"
+      />
+    </div>
+  </div>
+
+  <!-- Crl/Cmd + / to comment -->
+</div>
+<div class="footer">
+  <!----FOOTER GOES HERE------>
+  Tinker 2022 ©
+</div>
