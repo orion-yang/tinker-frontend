@@ -6,7 +6,9 @@ import { AdminService } from 'src/app/models/admin/admin.service';
 import { LikedService } from 'src/app/models/liked/liked.service';
 import { Project } from 'src/app/models/project/project';
 import { ProjectService } from 'src/app/models/project/project.service';
-import { faUser, faFilm, faTag, faUsers, faCalendarPlus, faUserTie, faSignOutAlt, faFile, faHeart, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUsers, faUserTie, faSignOutAlt, faFile, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { User } from 'src/app/models/user/user';
+import { UserService } from 'src/app/models/user/user.service';
 
 
 @Component({
@@ -17,11 +19,16 @@ import { faUser, faFilm, faTag, faUsers, faCalendarPlus, faUserTie, faSignOutAlt
 export class ManageProjectsComponent implements OnInit {
 
   projects!: Project[];
+  filteredProjects!: Project[];
   username;
+  user!: User;
   admin!: Admin;
+  search: string = "";
+  filter: boolean = false;
   errorMessage: string = "";
 
   profileIcon = faUser;
+  searchIcon = faSearch;
   fileIcon = faFile;
   usersIcon = faUsers;
   adminIcon = faUserTie;
@@ -29,10 +36,11 @@ export class ManageProjectsComponent implements OnInit {
 
   constructor(private projectService : ProjectService,
               private likedService : LikedService,
+              private userService : UserService,
               private adminService : AdminService,
               private router: Router) {
-                if(localStorage.getItem('userName')){
-                  this.username = localStorage.getItem('userName');
+                if(sessionStorage.getItem('userName')){
+                  this.username = sessionStorage.getItem('userName');
                 }
               }
 
@@ -46,7 +54,6 @@ export class ManageProjectsComponent implements OnInit {
       this.adminService.findByUserName(this.username).subscribe(
         (response : Admin) => {
           this.admin = response;
-          console.log(response);
         },
         (error : HttpErrorResponse) => {
           this.errorMessage = "";
@@ -58,17 +65,46 @@ export class ManageProjectsComponent implements OnInit {
   getAllProjects() {
     this.projectService.getAllProjects().subscribe(
       (response : Project[]) => {
-        if (response.length > 0) {
-          this.projects = response;
-        }
+        this.projects = response;
+        this.filteredProjects = this.projects;
       }
     )
   }
 
-  deleteProject(project : Project){
+  filterOn() {
+    this.filter = true;
+  }
+
+  filterOff() {
+    this.filter = false;
+  }
+
+  checkFilter() {
+    return this.filter;
+  }
+
+  searchForProject() {
+    this.filteredProjects = this.projects.filter(
+      project => project.project_name.toLowerCase().includes(this.search.toLowerCase()) ||
+                 project.description.toLowerCase().includes(this.search.toLowerCase())
+    );
+    this.search = "";
+  }
+
+  decreaseProjectCount() {
+    this.user.numberOfProjects -= 1;
+    this.userService.updateUser(this.user).subscribe(
+      (response : User) => {
+        this.user = response;
+      }
+    );
+  }
+
+  deleteProject(project : Project) {
+    this.user = project.user;
     this.likedService.deleteLikedByProject(project.id).subscribe(
       (response: void) => {
-        console.log(response + "Deleted liked");
+        this.decreaseProjectCount();
         this.projectService.deleteProject(project.id).subscribe(
           (response : void) => {
             this.getAllProjects();

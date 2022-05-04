@@ -13,7 +13,7 @@
         </div>
         <div class="main-container">
             <h1>Manage Users</h1><br>
-            <div class="user-list" *ngIf="users.length !== 0">
+            <div class="user-list" *ngIf="users && users.length !== 0">
                 <div class="ng-container" *ngFor="let user of users">
                     <div class="user-item">
                         <p class="title">Username: {{user.userName}}</p> 
@@ -22,7 +22,7 @@
                 </div>
                 
             </div>
-            <div class="empty-user-list" *ngIf="users.length === 0">You do not have any liked projects.</div> 
+            <div class="empty-user-list" *ngIf="users.length === 0">You do not have any users.</div> 
             <div class="info-container" *ngIf="this.selectedUser">
                 <div class="project-display">
                     <label>User: </label>

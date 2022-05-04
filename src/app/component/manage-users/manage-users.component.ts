@@ -33,8 +33,8 @@ export class ManageUsersComponent implements OnInit {
               private userService: UserService,
               private emailService: EmailService,
               private router: Router) { 
-                if(localStorage.getItem('userName')) {
-                  this.userName = localStorage.getItem('userName');
+                if(sessionStorage.getItem('userName')) {
+                  this.userName = sessionStorage.getItem('userName');
                 }
               }
 

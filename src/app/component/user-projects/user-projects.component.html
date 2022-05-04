@@ -22,7 +22,7 @@
                     <label>Project Description:</label><br><br>
                     <div class="input-group">
                         <textarea [(ngModel)]="description" class="textarea" rows="7" cols="55" maxlength="500" required></textarea> 
-                    </div>
+                    </div><br><br>
                     <p class="message">{{message}}</p>
                     <input type="submit" value="Add" class="add-btn" (click)="addProject()">
                 </div>
@@ -38,7 +38,7 @@
                 {{project.description}}<br><br>
                 <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
             </div>  
-            <div class="project" id="empty" *ngIf="projects.length === 0">
+            <div class="no-project" id="empty" *ngIf="projects.length === 0">
                 No Projects Available
             </div>  
             

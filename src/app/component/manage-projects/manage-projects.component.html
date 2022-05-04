@@ -13,20 +13,56 @@
         </div>
         <div class="main-container">
             <div class="header"><h1>All Project Information</h1><br></div>
-            <div class="project" id="single-card" *ngFor="let project of projects">
-                <label for="nameOnCard">Project Name:</label>
-                {{project.project_name}}<br><br>
-                <label for="cardNum">Date Created:</label>
-                {{project.create_date}}<br><br>
-                <label for="cardType">Likes:</label>
-                {{project.like_counter}}<br><br>
-                <label for="expDate">Description:</label><br><br>
-                {{project.description}}<br><br>
-                <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
-            </div>  
-            <div class="project" id="empty" *ngIf="projects.length === 0">
-                No Projects Available
-            </div>  
+            <div class="filter-container">
+                <!-- <div class="filter-types"> -->
+                    <p class="filter-types" [class.filter-select]="!checkFilter()" (click)="filterOff()">All</p>
+                    <p class="filter-types" [class.filter-select]="checkFilter()" (click)="filterOn()">Filter Search</p>
+                <!-- </div> -->
+                <div class="search" *ngIf="filter">
+                    <label for="searchbar" class="searchbar">Search For a Project: </label>
+                    <input type="text" id="searchbar" class="searchbar" placeholder="Enter a Project Title or Keywords" [(ngModel)]="search" (keyup.enter)="searchForProject()">
+                    <div class="search-icon" (click)="searchForProject()"><fa-icon [icon]="searchIcon"></fa-icon></div>
+                </div>
+            </div>
+
+            <div *ngIf="filter">
+                <div class="project" id="single-card" *ngFor="let project of filteredProjects">
+                    <label for="user">User:</label>
+                    {{project.user.userName}}<br><br>
+                    <label for="title">Project Name:</label>
+                    {{project.project_name}}<br><br>
+                    <label for="date">Date Created:</label>
+                    {{project.create_date}}<br><br>
+                    <label for="likes">Likes:</label>
+                    {{project.like_counter}}<br><br>
+                    <label for="description">Description:</label><br><br>
+                    {{project.description}}<br><br>
+                    <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
+                </div>  
+                <div class="no-project" id="empty" *ngIf="filteredProjects.length === 0">
+                    No Projects Available
+                </div>  
+            </div>
+
+            <div *ngIf="!filter">
+                <div class="project" id="single-card" *ngFor="let project of projects">
+                    <label for="user">User:</label>
+                    {{project.user.userName}}<br><br>
+                    <label for="title">Project Name:</label>
+                    {{project.project_name}}<br><br>
+                    <label for="date">Date Created:</label>
+                    {{project.create_date}}<br><br>
+                    <label for="likes">Likes:</label>
+                    {{project.like_counter}}<br><br>
+                    <label for="description">Description:</label><br><br>
+                    {{project.description}}<br><br>
+                    <button type="button" class="delete-btn" (click)="deleteProject(project)">Delete</button>
+                </div>  
+                <div class="no-project" id="empty" *ngIf="projects.length === 0">
+                    No Projects Available
+                </div>  
+            </div>
+
             
         </div>
     </div>

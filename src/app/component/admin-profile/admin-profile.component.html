@@ -36,7 +36,6 @@
             </div>
 
             <div class="update" *ngIf="isVerified && editMode">
-                <h3>Update My Profile</h3>
                 <div class="change">
                     <form action="#" class="username-form">
                         <div class="input-group" id="float">
@@ -58,8 +57,9 @@
                             <label for="new-name">New Last Name</label>
                         </div>
                         <input type="submit" value="Update" (click)="changeName()" class="update-btn" >
-                    </form><br><br>
-                    <label class="errorMessage">{{ nameMessage }}</label>
+                        <label class="errorMessage2">{{ nameMessage }}</label>
+                    </form><br><br><br><br><br>
+                    
                 </div>
                 <div class="change">
                     <form action="#" class="pass-form">

@@ -123,21 +123,33 @@ export class CreateAccountComponent implements OnInit {
     return result;
   }
 
+  createCookie(userName: string,value: string, minutes: number) {
+    if (minutes) {
+        var date = new Date();
+        date.setMinutes(date.getMinutes() + minutes);
+        var expires = "; expires=" + date.toUTCString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = userName + "=" + value + expires + ";";
+  }
+
   public verifyConfirmationCode() {
     console.log(this.verificationCode);
     if (this.verificationCode === this.typedVerificationCode) {
       this.validCode = true;
       this.enteredWrongCode = false;
       this.typedVerificationCode = "";
-      localStorage.setItem('userName', this.user.userName);
-      localStorage.setItem('id', this.user.id);
+      sessionStorage.setItem('userName', this.user.userName);
+      sessionStorage.setItem('id', this.user.id);
+      this.createCookie(this.user.userName, this.user.id, 10);
       this.user.isVerified = "true";
       this.userService.updateUser(this.user).subscribe(
         (response:User) => {
           this.user = response;
         }
       )
-      this.router.navigate(['']);
+      this.router.navigate(['/projects']);
     } else {
       this.enteredWrongCode = true;
     }

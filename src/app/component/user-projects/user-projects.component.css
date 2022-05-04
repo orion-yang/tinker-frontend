@@ -26,6 +26,19 @@
     word-wrap: break-word;
 }
 
+.no-project{
+    color: white;
+    position: relative;
+    width: 43%;
+    height: fit-content;
+    margin: 10px 20px 20px;
+    padding: 50px 40px 40px;
+    background:rgb(116, 116, 116, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+    word-wrap: break-word;
+}
+
 #empty{
     text-align: center;
     color: white;
@@ -145,7 +158,11 @@ label {
 }
 
 .message{
-    color: crimson;
+    clear: both;
+    color: rgb(255, 109, 109);
+    font-size: 17px;
+    text-shadow: 0 15px 25px rgba(82, 81, 81, 0.7);
+    font-weight: bold;
 }
 
 .textarea {

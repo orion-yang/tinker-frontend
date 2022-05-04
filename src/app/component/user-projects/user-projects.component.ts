@@ -63,6 +63,24 @@ export class UserProjectsComponent implements OnInit {
     }
   }
 
+  increaseProjectCount() {
+    this.user.numberOfProjects += 1;
+    this.userService.updateUser(this.user).subscribe(
+      (response : User) => {
+        this.user = response;
+      }
+    );
+  }
+
+  decreaseProjectCount() {
+    this.user.numberOfProjects -= 1;
+    this.userService.updateUser(this.user).subscribe(
+      (response : User) => {
+        this.user = response;
+      }
+    );
+  }
+
   getProjectsById() {
     this.projectService.findByUserId(this.userId).subscribe(
       (response : Project[]) => {
@@ -85,6 +103,7 @@ export class UserProjectsComponent implements OnInit {
       this.projectService.addProject(newProject).subscribe(
         (response : Project) => {
           this.project = response;
+          this.increaseProjectCount();
           this.getProjectsById();
         },
         (error : HttpErrorResponse) => {
@@ -108,6 +127,7 @@ export class UserProjectsComponent implements OnInit {
         console.log(response + "Deleted liked");
         this.projectService.deleteProject(project.id).subscribe(
           (response : void) => {
+            this.decreaseProjectCount();
             this.getProjectsById();
           },
           (error : HttpErrorResponse) => {

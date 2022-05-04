@@ -30,6 +30,7 @@ label{
     float: left;
     position: relative;
     height: auto;
+    /* margin-top: -50px; */
     width: 400px;
     padding: 50px 40px 40px;
     background:rgb(116, 116, 116, 0.9);
@@ -54,7 +55,7 @@ label{
     box-shadow: 0 15px 25px rgba(0,0,0,0.7);
     width: 60%;
     background:rgb(116, 116, 116, 0.9);
-    /* height: auto; */
+    overflow: auto;
     height: 385px;
     width: 350px;
     font-size: 20px;

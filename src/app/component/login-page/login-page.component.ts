@@ -60,7 +60,7 @@ export class LoginPageComponent implements OnInit {
             this.setSessionStorage(response.userName, response.id);
             this.createCookie(response.userName, response.id, 10);
             this.user = response;
-            this.router.navigate(['']);
+            this.router.navigate(['/projects']);
           } else {
             this.errorMessage = "Your account has been suspended!"
             this.showInvalidLogin = true;
@@ -121,7 +121,7 @@ export class LoginPageComponent implements OnInit {
         var expires = "";
     }
     document.cookie = userName + "=" + value + expires + ";";
-}
+  }
 
 
   forgotPassword() {

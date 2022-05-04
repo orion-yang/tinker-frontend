@@ -47,8 +47,8 @@ export class AdminProfileComponent implements OnInit {
   constructor(private adminService : AdminService,
               private emailService : EmailService,
               private router: Router) { 
-    if(localStorage.getItem('userName')){
-      this.username = localStorage.getItem('userName');
+    if(sessionStorage.getItem('userName')){
+      this.username = sessionStorage.getItem('userName');
     }
   }
 
